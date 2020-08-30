@@ -4,17 +4,23 @@
 #include <iostream>
 #include "linked_list.h"
 
+using namespace std;
+
 int main()
 {
-    std::cout << "Hello World!\n";
+	std::cout << "Hello World!\n";
 
-    auto list = new linked_list();
-    list->add(5);
-    list->add(5);
-    list->add(5);
-    list->add(5);
+	{
+		auto list = make_unique<linked_list>();
+		list->add(1);
+		list->add(2);
+		list->add(3);
+		list->add(4);
 
-    list->print();
+		list->insert_after(99, 1);
+
+		list->print();
+	}
 }
 
 
